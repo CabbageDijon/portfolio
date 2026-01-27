@@ -1,0 +1,24 @@
+/* Catalogue-specific styles */
+.table-wrap{
+  overflow:auto;
+  border-radius: var(--radius);
+  border:1px solid var(--border);
+  background: rgba(11,18,32,.55);
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width: 720px;
+}
+th, td{
+  padding: 12px 12px;
+  border-bottom:1px solid var(--border);
+  text-align:left;
+}
+th{
+  font-size:.92rem;
+  color: var(--muted);
+  font-weight:800;
+  background: rgba(255,255,255,.03);
+}
+tr:hover td{ background: rgba(255,255,255,.03); }

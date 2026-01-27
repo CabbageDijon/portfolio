@@ -1,0 +1,10 @@
+/* Services-specific styles */
+.service-top{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+@media (min-width: 900px){
+  .service-top{ flex-direction:row; align-items:flex-start; justify-content:space-between; }
+}
+.service-top .actions{ display:flex; flex-wrap:wrap; gap:10px; }

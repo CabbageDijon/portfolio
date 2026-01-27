@@ -1,0 +1,9 @@
+/* Projects-specific styles */
+.project-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+@media (min-width: 900px){
+  .project-grid{ grid-template-columns: 1fr 1fr; }
+}

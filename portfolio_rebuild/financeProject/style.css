@@ -1,0 +1,310 @@
+:root {
+    --brand-primary: #23272e;
+    --brand-secondary: #708eb1;
+    --brand-dark: #1b2633;
+    --brand-accent: #5d11e0;
+    --background-main: linear-gradient(120deg, #cfd9e9 0%, #b3c3f8 50%, #deb3fa 100%);
+}
+
+body, html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: 'TASA Orbiter';
+    color: #1f2d3a;
+
+    background: var(--background-main);
+    background-size: 200% 200%;
+    animation: gradientShift 9s ease infinite;
+}
+
+.h1 {
+    text-align: center;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* HERO with Image Right and Alt version */
+.hero {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 45%, rgba(0,0,0,0.55));
+}
+
+.hero-content {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 420px;
+    background: rgba(27, 38, 51, 0.9);
+    padding: 2rem;
+    color: white;
+    box-shadow: -12px 0 25px rgba(0,0,0,0.4);
+}
+
+.hero-content h1 {
+    font-family: 'Funnel Display';
+    margin-bottom: 1rem;
+}
+.hero-content-alt {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 420px;
+    background: rgba(27, 38, 51, 0.9);
+    padding: 2rem;
+    color: white;
+    box-shadow: -12px 0 25px rgba(0,0,0,0.4);
+}
+
+.hero-content h1 {
+    font-family: 'Funnel Display';
+    margin-bottom: 1rem;
+}
+
+
+/* HERO with colour banner */
+
+.hero-alt {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    /* Replace image with gradient background */
+    background: linear-gradient(120deg, #23272e 0%, #708eb1 100%);
+}
+
+/* Remove the image styling since we’re not using <img> anymore */
+.hero-alt img {
+    display: none;
+}
+
+/* Optional overlay for extra depth */
+.hero-alt::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 45%, rgba(0,0,0,0.55));
+}
+
+/* CONTENT */
+.content-section {
+    padding: 3rem 10%;
+}
+
+.content-section h1 {
+    text-align: center;
+    color:#1f2d3a;
+}
+
+.content-section h2 {
+    color: var(--brand-primary);
+}
+
+.reason {
+    text-align: right;
+}
+
+.solution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 4rem;
+    margin-top: 3rem;
+    
+}
+
+.solution-card {
+    background: linear-gradient(to right bottom,#48576e, #6a8bbf);
+    backdrop-filter: blur(5px);
+    border-radius: 14px;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    margin: 1.5rem;
+    padding: 1.75rem 1.5rem;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.solution-card:hover {
+    background: linear-gradient(to right bottom,#627796, #82a9e7);
+    transform: translateY(-6px);
+    box-shadow:
+        0 16px 32px rgba(27, 38, 51, 0.12),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+.solution-card h2 {
+    color: white;
+}
+
+/* SOLUTIONS – refined interaction */
+.solutions h1 {
+    margin-bottom: 2rem;
+}
+
+.solution-link {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+/* Card refinements */
+.solution-card {
+    padding: 2rem 1.75rem;
+    margin: 0;
+    min-height: 220px;
+    color: rgb(221, 227, 235);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    cursor: pointer;
+    outline: none;
+}
+
+/* CTA indicator */
+.solution-cta {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: rgba(255,255,255,0.9);
+
+    align-self: flex-end;
+    transition: transform 0.2s ease;
+}
+
+/* Hover + focus */
+.solution-card:hover .solution-cta {
+    transform: translateX(4px);
+}
+
+.solution-card:focus-visible {
+    box-shadow:
+        0 0 0 3px rgba(255,255,255,0.35),
+        0 16px 32px rgba(27, 38, 51, 0.18);
+}
+
+/* Slightly deeper base gradient */
+.solution-card {
+    background: linear-gradient(
+        135deg,
+        #44546c 0%,
+        #6f8fc2 100%
+    );
+}
+
+.solution-card:hover {
+    background: linear-gradient(
+        135deg,
+        #5a6f8f 0%,
+        #88adeb 100%
+    );
+}
+
+
+/* TEAM */
+.team-section {
+    padding: 3rem 10%;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-card {
+    background: linear-gradient(118deg, #f7f7f8 0%, #afb7bb 100% );
+    backdrop-filter: blur(6px);
+    border-radius: 14px;
+
+    text-align: center;
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 20px rgba(27, 38, 51, 0.08),
+        inset 0 1px 0 rgba(255,255,255,0.6);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+
+.team-card:hover {
+        background: linear-gradient(118deg, #ededf7 0%, #a4b2b9 100% );
+    transform: translateY(-6px);
+    box-shadow:
+        0 16px 32px rgba(27, 38, 51, 0.12),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+
+.team-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.team-card h3 {
+    margin: 1rem 0 0.3rem;
+}
+
+.team-card span {
+    font-size: 0.9rem;
+    color: var(--brand-accent);
+    padding-bottom: 1rem;
+    display: block;
+}
+
+/* FOOTER */
+.footer {
+    background: linear-gradient(to top, #364555, #3b4a5c);
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #99bdf7;
+}
+
+.footer a:active {
+    color: cornflowerblue;
+}
+

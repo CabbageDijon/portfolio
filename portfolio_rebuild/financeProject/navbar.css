@@ -1,0 +1,84 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  background: linear-gradient(to right, var(--brand-primary), var(--brand-secondary));
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+
+  transition: height 0.35s ease, padding 0.35s ease;
+  height: 3rem;
+  padding: 0.75rem 2rem;
+  overflow: visible;
+}
+
+/* Collapsed state */
+.navbar.navbar--collapsed {
+  height: 8px;
+  padding: 0;
+}
+
+
+.navbar_container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+
+.navbar_logo {
+  font-family: 'Funnel Display';
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+
+  margin-right: 2.5rem; 
+  white-space: nowrap;
+
+  transition: opacity 0.25s ease;
+}
+
+/* Hide logo text when collapsed */
+.navbar--collapsed .navbar_logo {
+  opacity: 0;
+}
+
+
+.navbar_menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+/* Hide links when collapsed */
+.navbar--collapsed .navbar_menu {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.navbar_links {
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.navbar_links:hover {
+  background-color: rgba(0,0,0,0.25);
+  transform: translateY(-1px);
+}
+
+.navbar_links:active {
+    background-color: rgba(43, 43, 49, 0.25);
+}

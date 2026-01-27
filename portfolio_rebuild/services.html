@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Tema" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Services and requests" />
+  <title>Services | Tema Bown</title>
+
+  <link rel="icon" href="favicon.png" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="services.css" />
+</head>
+<body>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="name">Tema Bown</span>
+      <span class="tag">Portfolio</span>
+    </div>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- Current Work In Progress -->
+<!-- Code to later be inserted within the nav-links class for navbar -->
+<!--       <a href="services.html" class="active">Services</a>       -->
+
+<main class="container">
+
+  <!-- Hero -->
+  <section class="section">
+    <div class="card">
+      <div class="card-inner service-top">
+        <div>
+          <h1>Services</h1>
+          <p class="small">
+            Request a PC quote, commission pixel art, or start a website project.
+          </p>
+
+          <div class="badge-row">
+            <span class="badge green">PC Builds</span>
+            <span class="badge blue">Web Development</span>
+            <span class="badge red">Pixel Art</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="catalogueCC.html">Browse catalogue</a>
+          <a class="btn" href="mailto:bowntema@gmail.com">Email directly</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Form -->
+  <section class="section">
+    <div class="card">
+      <div class="card-inner">
+
+        <div class="notice">  
+          Fill in the form below and I’ll get back to you by your chosen contact method.
+        </div>
+
+        <form
+          class="service-form"
+          id="serviceForm"
+          method="post"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+        >
+
+          <!-- Basic info -->
+          <div class="grid-2">
+            <div>
+              <label for="name">Name *</label>
+              <input id="name" name="name" required />
+            </div>
+
+            <div>
+              <label for="contact">Contact *</label>
+              <input
+                id="contact"
+                name="contact"
+                required
+                placeholder="Enter your contact detail"
+              />
+
+              <p class="small">Preferred contact method:</p>
+
+              <div class="badge-row">
+                <label class="badge">
+                  <input type="radio" name="contactType" value="email" required />
+                  Email
+                </label>
+                <label class="badge">
+                  <input type="radio" name="contactType" value="whatsapp" />
+                  WhatsApp
+                </label>
+                <label class="badge">
+                  <input type="radio" name="contactType" value="discord" />
+                  Discord
+                </label>
+              </div>
+
+              <div id="countryWrap" class="hidden">
+                <label for="countryCode">Country code</label>
+                <select id="countryCode" name="countryCode">
+                  <option value="+27">South Africa (+27)</option>
+                  <option value="+1">USA (+1)</option>
+                  <option value="+44">UK (+44)</option>
+                  <option value="+61">Australia (+61)</option>
+                  <option value="+49">Germany (+49)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Service -->
+          <div style="margin-top:16px;">
+            <label for="service">Service *</label>
+            <select id="service" name="service" required>
+              <option value="">Select a service…</option>
+              <option value="pc">PC Quote</option>
+              <option value="pixel">Pixel Art Commission</option>
+              <option value="web">Website Development</option>
+            </select>
+          </div>
+
+          <!-- PC -->
+          <div id="pcFields" class="hidden">
+            <p class="small">PC quote details will be added later.</p>
+          </div>
+
+          <!-- Pixel Art -->
+          <div id="pixelFields" class="hidden">
+            <label for="pixelRequest">Pixel art request *</label>
+            <textarea
+              id="pixelRequest"
+              name="pixelRequest"
+              placeholder="Style, size, references, etc."
+            ></textarea>
+          </div>
+
+          <!-- Website -->
+          <div id="webFields" class="hidden grid-2">
+            <div>
+              <label for="pages">Number of pages *</label>
+              <input type="number" id="pages" name="pages" min="1" />
+            </div>
+
+            <div>
+              <label>
+                <input type="checkbox" name="gallery" />
+                Image gallery needed
+              </label>
+            </div>
+
+            <div style="grid-column:1/-1;">
+              <label for="webExtras">Optional features</label>
+              <textarea
+                id="webExtras"
+                name="webExtras"
+                placeholder="Contact form, blog, hosting help, SEO, etc."
+              ></textarea>
+            </div>
+          </div>
+
+          <input type="hidden" name="_subject" value="New Service Request" />
+          <input type="hidden" name="_template" value="table" />
+
+          <div style="margin-top:18px;">
+            <button class="btn primary" type="submit">Submit request</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <p class="footer-title">Pages</p>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-title">Contact</p>
+        <ul class="footer-links">
+          <li><a href="mailto:bowntema@gmail.com">bowntema@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <span>&copy; 2023–2026 Tema Bown.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="services.js" defer></script>
+</body>
+</html>
